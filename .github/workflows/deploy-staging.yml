@@ -1,5 +1,9 @@
 name: Stage the app
 
+on: 
+  pull_request:
+    types: [labeled]
+
 env:
   DOCKER_IMAGE_NAME: hammj-azure-ttt
   IMAGE_REGISTRY_URL: docker.pkg.github.com
@@ -11,10 +15,6 @@ env:
   AZURE_WEBAPP_NAME: hammj-ttt-app
   #################################################
   
-on: 
-  pull_request:
-    types: [labeled]
-
 jobs:
   build:
     runs-on: ubuntu-latest
